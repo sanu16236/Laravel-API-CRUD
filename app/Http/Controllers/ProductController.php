@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\APIHelpers;
+use App\Http\Requests\saveProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Spatie\FlareClient\Api;
@@ -38,7 +39,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(saveProductRequest $request)
     {
         $product = new Product();
         $product->name = $request->name;
